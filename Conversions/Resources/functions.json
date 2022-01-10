@@ -1,0 +1,192 @@
+[
+    {
+        "solution":"$/Square Meter",
+        "expressions":[
+            {
+                "expression": "A * (3.280839895 * 3.280839895) / 1000",
+                "inputs":[
+                    "$/MSF1"
+                ]
+            },
+            {
+                "expression": "A * B * 3.280839895 * 3.280839895 / 3000",
+                "inputs":[
+                    "$/Pound",
+                    "Pounds/Ream"
+                ]
+            }
+        ],
+        "category":"pricing"
+    },
+    {
+        "solution":"$/Square Yard",
+        "expressions":[
+            {
+                "expression":"A * 3 * 3 / 1000",
+                "inputs":[
+                    "$/MSF"
+                ]
+            }
+        ],
+        "category":"pricing"
+    },
+    {
+        "solution":"$/Square Foot",
+        "expressions":[
+            {
+                "expression":"A / 1000",
+                "inputs":[
+                    "$/MSF"
+                ]
+            }
+        ],
+        "category":"pricing"
+    },
+    {
+        "solution":"$/Linear Foot",
+        "expressions":[
+            {
+                "expression":"A * B * 0.00008333",
+                "inputs":[
+                    "$/MSF",
+                    "Width (Inches)"
+                ]
+            }
+        ],
+        "category":"pricing"
+    },
+    {
+        "solution":"$/Linear Yard",
+        "expressions":[
+            {
+                "expression":"A * B * 0.00025",
+                "inputs":[
+                    "$/MSF",
+                    "Width (Inches)"
+                ]
+            }
+        ],
+        "category":"pricing"
+    },
+    {
+        "solution":"$/Linear Meter",
+        "expressions":[
+            {
+                "expression":"A * B / 3657.6",
+                "inputs":[
+                    "$/MSF",
+                    "Width (Inches)"
+                ]
+            }
+        ],
+        "category":"pricing"
+    },
+    {
+        "solution":"$/MSI",
+        "expressions":[
+            {
+                "expression":"A / 144",
+                "inputs":[
+                    "$/MSF"
+                ]
+            }
+        ],
+        "category":"pricing"
+    },
+    {
+        "solution":"$/Pound",
+        "expressions":[
+            {
+                "expression":"A * 3 * (1 / B)",
+                "inputs":[
+                    "$/MSF",
+                    "Pounds/Ream"
+                ]
+            }
+        ],
+        "category":"pricing"
+    },
+    {
+        "solution":"$/Kilogram",
+        "expressions":[
+            {
+                "expression":"A * 3 * (1 / B) * 2.204622622",
+                "inputs":[
+                    "$/MSF",
+                    "Pounds/Ream"
+                ]
+            }
+        ],
+        "category":"pricing"
+    },
+    {
+        "solution":"Order Value in $",
+        "expressions":[
+            {
+                "expression":"A * B",
+                "inputs":[
+                    "MSF",
+                    "$/MSF"
+                ]
+            },
+            {
+                "expression":"A * B/12 * C/1000",
+                "inputs":[
+                    "Linear Feet",
+                    "Width (Inches)",
+                    "$/MSF"
+                ]
+            },
+            {
+                "expression":"A * C * 3 / B",
+                "inputs":[
+                    "Pounds",
+                    "Pounds/Ream",
+                    "$/MSF"
+                ]
+            }
+            
+        ],
+        "category":"pricing"
+    },
+    {
+        "solution":"$/MSF",
+        "expressions":[
+            {
+                "expression":"A * 1000 / (3.280839895 * 3.280839895)",
+                "inputs":[
+                    "$/Square Meter"
+                ]
+            },
+            {
+                "expression":"A * 1000",
+                "inputs":[
+                    "$/Square Feet"
+                ]
+            },
+            {
+                "expression":"A * 12000 / B",
+                "inputs":[
+                    "$/Linear Foot",
+                    "Width (Inches)"
+                ]
+            },
+            {
+                "expression":"A * 144",
+                "inputs":[
+                    "$/MSI"
+                ]
+            },
+            {
+                "expression":"A * B / 3",
+                "inputs":[
+                    "$/Pound",
+                    "Pounds/Ream"
+                ]
+            }
+            
+        ],
+        "category":"pricing"
+    }
+    
+]

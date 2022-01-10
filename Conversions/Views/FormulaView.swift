@@ -1,0 +1,253 @@
+//
+//  FormulaView.swift
+//  Conversions
+//
+//  Created by Matt Dahl on 1/9/22.
+//
+
+import SwiftUI
+
+struct FormulaView: View {
+    
+    @EnvironmentObject var model: FunctionModel
+    @State var wheelOptions: [String] = [String]()
+    
+    @State var categoryFunctions = [Function]()
+    @State var currentFunction = 0
+    @State var currentExpression = 0
+    let category: String
+    
+    @State var selectedWheelIndex: Int = 0
+    
+    @State var selectedBox: Int = 0
+    
+    @State var solutionLabel: String = ""
+    @State var inputLabels: [String] = [String]()
+    
+    @State var keyboardOpen: Bool = false
+    
+    
+    var body: some View {
+        VStack {
+            ScrollView{
+                VStack(alignment: .leading){
+                    
+                    ForEach(0..<model.functions[currentFunction].expressions[currentExpression].inputs.count, id: \.self){i in
+                        Text("Input \(model.intToString(i+1))")
+                            .font(.subheadline)
+                            .padding(.bottom, -5)
+                        HStack(alignment: .center, spacing: 15){
+                            if(i == 0){
+                                Button(action: {
+                                    selectedBox = i+1
+                                }) {
+                                    InputCardView(alpha: 0.12, height: 41, selected: selectedBox == i+1, label: model.functions[currentFunction].expressions[currentExpression].inputs[i], showArrow: true)
+                                        .foregroundColor(.black)
+                                }
+                            } else{
+                                InputCardView(alpha: 0.12, height: 41, selected: selectedBox == i+1, label: model.functions[currentFunction].expressions[currentExpression].inputs[i], showArrow: false)
+                                    .foregroundColor(.black)
+                            }
+                            
+                            InputTextView(id: i)
+                                .onTapGesture(perform: {
+                                    keyboardOpen = true
+                                })
+                        }
+                        .padding(.bottom, 30)
+                    }
+                    
+                    
+                    
+                    
+                    Text("Solution")
+                        .font(.headline)
+                        .padding(.bottom, -5)
+                    HStack(alignment: .center, spacing: 15){
+                        Button(action: {
+                            selectedBox = 0
+                        }) {
+                            InputCardView(alpha: 0.42, height: 47, selected: selectedBox == 0, label: solutionLabel, showArrow: true)
+                                .foregroundColor(.black)
+                        }
+                        
+                        SolutionCardView(alpha: 0.42, height: 47, text: model.solveFunction(functionIndex: currentFunction, expressionIndex: currentExpression))
+                    }
+                    .padding(.bottom, 30)
+
+                    
+                    
+                    Spacer()
+                }
+                .padding(.horizontal)
+                .padding(.top, 15)
+            }
+            
+            if(!keyboardOpen){
+                VStack(alignment: .leading){
+                    //MARK: Wheel
+                    Picker("wheel", selection: $selectedWheelIndex, content: {
+                        ForEach(0..<wheelOptions.count, id: \.self){ i in
+                            Text(wheelOptions[i]).tag(i)
+                        }
+                    })
+                        .pickerStyle(.wheel)
+                        .padding(.horizontal, 20)
+                }
+                .background(Color(.sRGB, red: 0.7, green: 0.7, blue: 0.7, opacity: 0.3))
+            }
+        }
+        .navigationTitle("Pricing")
+        .navigationBarItems(trailing:
+                        Button(action: {
+                            print("Edit button pressed...")
+                        }) {
+                            Image(systemName: "plus.circle")
+                        }
+                    )
+        .onAppear(){
+            categoryFunctions = model.getFunctionsForCategory(category: category)
+            wheelOptions = model.getSolutionsFromFunctions(arr: categoryFunctions)
+            solutionLabel = categoryFunctions[selectedBox].solution
+        }
+        .onChange(of: selectedBox, perform: {newBox in
+            if(newBox == 0){
+                wheelOptions = model.getSolutionsFromFunctions(arr: categoryFunctions)
+                selectedWheelIndex = currentFunction
+            } else{
+                //if user selects input box
+                wheelOptions = model.getFirstInputsFromFunction(function: categoryFunctions[currentFunction])
+                selectedWheelIndex = currentExpression
+                
+            }
+            
+            
+            print("new box \(selectedBox)")
+        })
+        .onChange(of: selectedWheelIndex, perform: {newSelection in
+            if(selectedBox == 0){
+                if(solutionLabel != categoryFunctions[newSelection].solution){
+                    currentExpression = 0
+                }
+                solutionLabel = categoryFunctions[newSelection].solution
+                currentFunction = newSelection
+                
+            } else{
+                //inputLabels[selectedBox - 1] = wheelOptions[newSelection]
+                currentExpression = newSelection
+            }
+        })
+        .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
+                keyboardOpen = false
+            
+        }
+        
+    }
+}
+
+struct InputCardView: View{
+    
+    var alpha: CGFloat
+    var height: CGFloat
+    var selected: Bool
+    var label: String
+    var showArrow: Bool
+    
+    var body: some View{
+        ZStack{
+            if(selected){
+                RoundedRectangle(cornerRadius: 4)
+                    .foregroundColor(Color(.sRGB, red: 0.7, green: 0.7, blue: 0.7, opacity: alpha))
+                    .frame(height: height, alignment: .center)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 4)
+                            .stroke(Color.gray, lineWidth: 1)
+                        )
+            }
+            else{
+                RoundedRectangle(cornerRadius: 4)
+                    .foregroundColor(Color(.sRGB, red: 0.7, green: 0.7, blue: 0.7, opacity: alpha))
+                    .frame(height: height, alignment: .center)
+            }
+            
+            HStack{
+                Text(label)
+                Spacer()
+                if(showArrow){
+                    Image(systemName: "chevron.up.chevron.down")
+                        .foregroundColor(Color(.sRGB, red: 0.38, green: 0.38, blue: 0.38, opacity: 1))
+                }
+            }
+            .padding()
+        }
+    }
+}
+
+
+struct InputTextView: View{
+    
+    @EnvironmentObject var model: FunctionModel
+    @State var amount = ""
+    var id: Int
+    
+    var body: some View{
+        ZStack{
+            /*RoundedRectangle(cornerRadius: 4)
+                .foregroundColor(Color(.sRGB, red: 0.7, green: 0.7, blue: 0.7, opacity: 0.12))
+                .frame(height: 43, alignment: .center)*/
+            TextField("Hello",text: $amount)
+                .keyboardType(.decimalPad)
+                .frame(height: 43, alignment: .center)
+        }
+        .onChange(of: amount, perform: {amt in
+            var toAdd = amt
+            if(toAdd.count > 0){
+                if(toAdd.first == "."){
+                    toAdd = "0" + amt
+                }
+                model.addInput(toAdd: Double(toAdd)!, index: id)
+            }
+            else{
+                model.addInput(toAdd: nil, index: id)
+            }
+        
+        })
+    }
+}
+
+
+struct SolutionCardView: View{
+    
+    var alpha: CGFloat
+    var height: CGFloat
+    var text: String
+    
+    var body: some View{
+        ZStack{
+            RoundedRectangle(cornerRadius: 4)
+                .foregroundColor(Color(.sRGB, red: 0.7, green: 0.7, blue: 0.7, opacity: alpha))
+                .frame(height: height, alignment: .center)
+            
+            
+            HStack{
+                Text("$")
+                Spacer()
+                Text(text)
+            }
+            .padding()
+        }
+    }
+}
+
+
+
+
+struct FormulaView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView{
+            FormulaView(category: "pricing")
+                .environmentObject(FunctionModel())
+        }
+    }
+}
