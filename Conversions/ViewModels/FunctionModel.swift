@@ -75,12 +75,19 @@ class FunctionModel: ObservableObject{
     
     func resetInputs(){
         inputs.removeAll()
+        inputs.append(nil)
+        inputs.append(nil)
+        inputs.append(nil)
+        
     }
     
-    func solveFunction(functionIndex: Int, expressionIndex: Int) -> String{
+    func solveFunction(functionIndex: Int, expressionIndex: Int, availableFuncs: [Function]) -> String{
         
-        let eq = functions[functionIndex].expressions[expressionIndex].expression
-        let inputNumber = functions[functionIndex].expressions[expressionIndex].inputs.count
+        if(availableFuncs.count <= 0){
+            return ""
+        }
+        let eq = availableFuncs[functionIndex].expressions[expressionIndex].expression
+        let inputNumber = availableFuncs[functionIndex].expressions[expressionIndex].inputs.count
         var actualNumber = 0
         
         for i in inputs{

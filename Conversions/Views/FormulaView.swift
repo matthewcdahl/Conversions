@@ -31,30 +31,31 @@ struct FormulaView: View {
         VStack {
             ScrollView{
                 VStack(alignment: .leading){
-                    
-                    ForEach(0..<model.functions[currentFunction].expressions[currentExpression].inputs.count, id: \.self){i in
-                        Text("Input \(model.intToString(i+1))")
-                            .font(.subheadline)
-                            .padding(.bottom, -5)
-                        HStack(alignment: .center, spacing: 15){
-                            if(i == 0){
-                                Button(action: {
-                                    selectedBox = i+1
-                                }) {
-                                    InputCardView(alpha: 0.12, height: 41, selected: selectedBox == i+1, label: model.functions[currentFunction].expressions[currentExpression].inputs[i], showArrow: true)
+                    if(categoryFunctions.count > currentFunction){
+                        ForEach(0..<categoryFunctions[currentFunction].expressions[currentExpression].inputs.count, id: \.self){i in
+                            Text("Input \(model.intToString(i+1))")
+                                .font(.subheadline)
+                                .padding(.bottom, -5)
+                            HStack(alignment: .center, spacing: 15){
+                                if(i == 0){
+                                    Button(action: {
+                                        selectedBox = i+1
+                                    }) {
+                                        InputCardView(alpha: 0.12, height: 41, selected: selectedBox == i+1, label: categoryFunctions[currentFunction].expressions[currentExpression].inputs[i], showArrow: true)
+                                            .foregroundColor(.black)
+                                    }
+                                } else{
+                                    InputCardView(alpha: 0.12, height: 41, selected: selectedBox == i+1, label: categoryFunctions[currentFunction].expressions[currentExpression].inputs[i], showArrow: false)
                                         .foregroundColor(.black)
                                 }
-                            } else{
-                                InputCardView(alpha: 0.12, height: 41, selected: selectedBox == i+1, label: model.functions[currentFunction].expressions[currentExpression].inputs[i], showArrow: false)
-                                    .foregroundColor(.black)
+                                
+                                InputTextView(id: i)
+                                    .onTapGesture(perform: {
+                                        keyboardOpen = true
+                                    })
                             }
-                            
-                            InputTextView(id: i)
-                                .onTapGesture(perform: {
-                                    keyboardOpen = true
-                                })
+                            .padding(.bottom, 30)
                         }
-                        .padding(.bottom, 30)
                     }
                     
                     
@@ -71,7 +72,7 @@ struct FormulaView: View {
                                 .foregroundColor(.black)
                         }
                         
-                        SolutionCardView(alpha: 0.42, height: 47, text: model.solveFunction(functionIndex: currentFunction, expressionIndex: currentExpression))
+                        SolutionCardView(category: category, alpha: 0.42, height: 47, text: model.solveFunction(functionIndex: currentFunction, expressionIndex: currentExpression, availableFuncs: categoryFunctions))
                     }
                     .padding(.bottom, 30)
 
@@ -97,7 +98,7 @@ struct FormulaView: View {
                 .background(Color(.sRGB, red: 0.7, green: 0.7, blue: 0.7, opacity: 0.3))
             }
         }
-        .navigationTitle("Pricing")
+        .navigationTitle(category.first!.uppercased() + category.dropFirst())
         .navigationBarItems(trailing:
                         Button(action: {
                             print("Edit button pressed...")
@@ -193,12 +194,13 @@ struct InputTextView: View{
     
     var body: some View{
         ZStack{
-            /*RoundedRectangle(cornerRadius: 4)
+            RoundedRectangle(cornerRadius: 4)
                 .foregroundColor(Color(.sRGB, red: 0.7, green: 0.7, blue: 0.7, opacity: 0.12))
-                .frame(height: 43, alignment: .center)*/
-            TextField("Hello",text: $amount)
+                .frame(height: 43, alignment: .center)
+            TextField("",text: $amount)
                 .keyboardType(.decimalPad)
                 .frame(height: 43, alignment: .center)
+                .padding(.horizontal)
         }
         .onChange(of: amount, perform: {amt in
             var toAdd = amt
@@ -219,6 +221,7 @@ struct InputTextView: View{
 
 struct SolutionCardView: View{
     
+    var category: String
     var alpha: CGFloat
     var height: CGFloat
     var text: String
@@ -231,7 +234,9 @@ struct SolutionCardView: View{
             
             
             HStack{
-                Text("$")
+                if(category == "pricing"){
+                    Text("$")
+                }
                 Spacer()
                 Text(text)
             }
