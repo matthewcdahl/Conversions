@@ -11,6 +11,7 @@ class FunctionModel: ObservableObject{
     
     @Published var functions = [Function]()
     var inputs = [Double?]()
+    @Published var lastCategory = ""
     
     @Published var favorites = [Favorite](){
         didSet{
@@ -151,6 +152,7 @@ class FunctionModel: ObservableObject{
         for i in 0..<favorites.count{
             if favorites[i].id == toRemoveId{
                 favorites.remove(at: i)
+                return
             }
         }
         
@@ -176,6 +178,16 @@ class FunctionModel: ObservableObject{
         }
         
         return rtn
+    }
+    
+    func setInputsFromFavorite(favInputs: [Double]){
+        
+        resetInputs()
+        
+        for i in 0..<favInputs.count{
+            self.inputs[i] = favInputs[i]
+        }
+        
     }
     
     

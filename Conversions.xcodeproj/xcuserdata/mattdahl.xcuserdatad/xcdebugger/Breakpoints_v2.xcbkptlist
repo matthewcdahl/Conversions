@@ -30,8 +30,8 @@
             filePath = "Conversions/Views/FormulaView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -46,13 +46,13 @@
             filePath = "Conversions/Views/FormulaView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "67185020-3E07-48C6-ACE6-B82138F6B225 - ddef201a28679a76"
+                  uuid = "67185020-3E07-48C6-ACE6-B82138F6B225 - ddef201a28679d99"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -62,12 +62,12 @@
                   urlString = "file:///Users/mattdahl/Documents/XCode/Conversions/Conversions/Views/FormulaView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "1223">
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1272">
                </Location>
                <Location
-                  uuid = "67185020-3E07-48C6-ACE6-B82138F6B225 - 8a7286ae88d5e135"
+                  uuid = "67185020-3E07-48C6-ACE6-B82138F6B225 - 8a7286ae88d5e6da"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -77,8 +77,8 @@
                   urlString = "file:///Users/mattdahl/Documents/XCode/Conversions/Conversions/Views/FormulaView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
                   offsetFromSymbolStart = "2267">
                </Location>
             </Locations>
@@ -94,8 +94,8 @@
             filePath = "Conversions/ViewModels/FunctionModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "Conversions/ViewModels/FunctionModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "Conversions/Views/FormulaView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "Conversions/Views/FormulaView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -174,10 +174,324 @@
             filePath = "Conversions/Views/FormulaView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D41BBFB0-6A73-4E95-A36D-5077634116F4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Conversions/Views/FormulaView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "FormulaView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "D41BBFB0-6A73-4E95-A36D-5077634116F4 - 79e1ae719bf3698b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Conversions.FormulaView.currentExpression : Swift.Int"
+                  moduleName = "Conversions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattdahl/Documents/XCode/Conversions/Conversions/Views/FormulaView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "D41BBFB0-6A73-4E95-A36D-5077634116F4 - 715bb704a4849aa1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Conversions.FormulaView.currentExpression.getter : Swift.Int"
+                  moduleName = "Conversions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattdahl/Documents/XCode/Conversions/Conversions/Views/FormulaView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "117">
+               </Location>
+               <Location
+                  uuid = "D41BBFB0-6A73-4E95-A36D-5077634116F4 - be51aac7dd23ceb5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Conversions.FormulaView.currentExpression.setter : Swift.Int"
+                  moduleName = "Conversions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattdahl/Documents/XCode/Conversions/Conversions/Views/FormulaView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "113">
+               </Location>
+               <Location
+                  uuid = "D41BBFB0-6A73-4E95-A36D-5077634116F4 - f8ca7c1d1916bbb5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Conversions.FormulaView.currentExpression.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Conversions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattdahl/Documents/XCode/Conversions/Conversions/Views/FormulaView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "46">
+               </Location>
+               <Location
+                  uuid = "D41BBFB0-6A73-4E95-A36D-5077634116F4 - 6e17e42fddf76d7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Conversions.FormulaView.$currentExpression.getter : SwiftUI.Binding&lt;Swift.Int&gt;"
+                  moduleName = "Conversions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattdahl/Documents/XCode/Conversions/Conversions/Views/FormulaView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "150">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53CB064F-35F7-4E6F-A308-61E094EDC08B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Conversions/Views/FormulaView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "FormulaView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "53CB064F-35F7-4E6F-A308-61E094EDC08B - 7c6265168a9691b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Conversions.FormulaView.currentFunction : Swift.Int"
+                  moduleName = "Conversions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattdahl/Documents/XCode/Conversions/Conversions/Views/FormulaView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "53CB064F-35F7-4E6F-A308-61E094EDC08B - 72f906b519046c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Conversions.FormulaView.currentFunction.getter : Swift.Int"
+                  moduleName = "Conversions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattdahl/Documents/XCode/Conversions/Conversions/Views/FormulaView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "117">
+               </Location>
+               <Location
+                  uuid = "53CB064F-35F7-4E6F-A308-61E094EDC08B - 324cca4a5bb87860"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Conversions.FormulaView.currentFunction.setter : Swift.Int"
+                  moduleName = "Conversions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattdahl/Documents/XCode/Conversions/Conversions/Views/FormulaView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "113">
+               </Location>
+               <Location
+                  uuid = "53CB064F-35F7-4E6F-A308-61E094EDC08B - 48c6c7a8cc428160"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Conversions.FormulaView.currentFunction.modify : Swift.Int with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Conversions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattdahl/Documents/XCode/Conversions/Conversions/Views/FormulaView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "46">
+               </Location>
+               <Location
+                  uuid = "53CB064F-35F7-4E6F-A308-61E094EDC08B - 37b93f23b8d0d528"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Conversions.FormulaView.$currentFunction.getter : SwiftUI.Binding&lt;Swift.Int&gt;"
+                  moduleName = "Conversions"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mattdahl/Documents/XCode/Conversions/Conversions/Views/FormulaView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "150">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0973D76E-4AF8-4A04-A297-72E302F83D0B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Conversions/Views/FormulaView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5E46863A-4615-4456-A16A-1A37B7EBEE0E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Conversions/Views/FavoritesView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C4329033-B068-420F-A094-CDCF34FDB28A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Conversions/Views/FormulaView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72A48D9A-7E31-4F49-8321-FB210CF31B1B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Conversions/Views/FormulaView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "381810C4-47D9-4637-9CBE-07B3F6DB4D33"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Conversions/Views/FavoritesView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6F026B17-72DA-4CAA-950D-7577BA358A14"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Conversions/Views/FavoritesView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "36ED5AC2-02FC-4976-8B19-E8537E503EF6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Conversions/Views/FavoritesView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1D6C6907-97CA-48BC-94F7-C7564A35786D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Conversions/ViewModels/FunctionModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "solveFunction(functionIndex:expressionIndex:availableFuncs:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

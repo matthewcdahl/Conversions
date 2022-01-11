@@ -13,11 +13,12 @@ struct FormulaView: View {
     @State var wheelOptions: [String] = [String]()
     
     @State var categoryFunctions = [Function]()
-    @State var currentFunction = 0
-    @State var currentExpression = 0
-    let category: String
     
-    @State var selectedWheelIndex: Int = 0
+    let category: String
+    @State var currentFunction: Int
+    @State var currentExpression: Int
+    
+    @State var selectedWheelIndex: Int
     
     @State var selectedBox: Int = 0
     
@@ -49,7 +50,7 @@ struct FormulaView: View {
                                         .foregroundColor(.black)
                                 }
                                 
-                                InputTextView(id: i)
+                                InputTextView(amount: String(model.inputs[i] ?? -1.0), id: i)
                                     .onTapGesture(perform: {
                                         keyboardOpen = true
                                     })
@@ -102,7 +103,7 @@ struct FormulaView: View {
         .navigationBarItems(trailing:
                         Button(action: {
                             //SAVE FUNCTION TO model favorites
-                            let newFav = Favorite(id: UUID(), title: "Doggy", inputs: model.functions[currentFunction].expressions[currentExpression].inputs, inputValues: model.getValidInputs(), solution: solutionLabel, solutionValue: model.solveFunction(functionIndex: currentFunction, expressionIndex: currentExpression, availableFuncs: categoryFunctions))
+            let newFav = Favorite(id: UUID(), title: "Doggy", inputs: categoryFunctions[currentFunction].expressions[currentExpression].inputs, inputValues: model.getValidInputs(), solution: solutionLabel, solutionValue: model.solveFunction(functionIndex: currentFunction, expressionIndex: currentExpression, availableFuncs: categoryFunctions), category: category, functionIndex: currentFunction, expressionIndex: currentExpression, wheelIndex: currentFunction)
                             
                             model.addToFavorites(newFav: newFav)
             
@@ -114,7 +115,14 @@ struct FormulaView: View {
         .onAppear(){
             categoryFunctions = model.getFunctionsForCategory(category: category)
             wheelOptions = model.getSolutionsFromFunctions(arr: categoryFunctions)
-            solutionLabel = categoryFunctions[selectedBox].solution
+            solutionLabel = categoryFunctions[currentFunction].solution
+            
+            if(category != model.lastCategory){
+                model.resetInputs()
+            }
+            
+            model.lastCategory = category
+            
         }
         .onChange(of: selectedBox, perform: {newBox in
             if(newBox == 0){
@@ -194,7 +202,7 @@ struct InputCardView: View{
 struct InputTextView: View{
     
     @EnvironmentObject var model: FunctionModel
-    @State var amount = ""
+    @State var amount: String
     var id: Int
     
     var body: some View{
@@ -219,6 +227,11 @@ struct InputTextView: View{
                 model.addInput(toAdd: nil, index: id)
             }
         
+        })
+        .onAppear(perform: {
+            if(amount == "-1.0"){
+                amount = ""
+            }
         })
     }
 }
@@ -256,7 +269,7 @@ struct SolutionCardView: View{
 struct FormulaView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            FormulaView(category: "pricing")
+            FormulaView(category: "pricing", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0)
                 .environmentObject(FunctionModel())
         }
     }
