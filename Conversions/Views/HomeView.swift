@@ -20,8 +20,9 @@ struct HomeView: View {
                             model.resetInputs()
                         })
                 }, label: {
-                    Text("Go to formula view")
+                    Text("Go to pricing view")
                 })
+                    .padding()
                 
                 NavigationLink(destination: {
                     FormulaView(category: "diameter")
@@ -31,6 +32,7 @@ struct HomeView: View {
                 }, label: {
                     Text("Go to roll diameter view")
                 })
+                    .padding()
             }
         }
     }

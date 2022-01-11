@@ -213,6 +213,60 @@
             }
         ],
         "category":"diameter"
+    },
+    {
+        "solution":"Linear Meters (6in. Core)",
+        "expressions":[
+            {
+                "expression":"((((A * A) - 36) * 65.4536) / B) * 0.3048",
+                "inputs":[
+                    "Roll Diameter (Inches)",
+                    "Caliper (mils)"
+                ]
+            }
+        ],
+        "category":"diameter"
+    },
+    {
+        "solution":"Roll Diameter (inches) (3in. Core)",
+        "expressions":[
+            {
+                "expression":"sqrt((A/(65.4536/B))+9)",
+                "inputs":[
+                    "Linear Feet",
+                    "Caliper (mils)"
+                ]
+            }
+        ],
+        "category":"diameter"
+    },
+    {
+        "solution":"Roll Diameter (inches) (6in. Core)",
+        "expressions":[
+            {
+                "expression":"sqrt((A/(65.4536/B))+36)",
+                "inputs":[
+                    "Linear Feet",
+                    "Caliper (mils)"
+                ]
+            }
+        ],
+        "category":"diameter"
+    },
+    {
+        "solution":"Roll Weight (pounds)",
+        "expressions":[
+            {
+                "expression":"A * B * C / 36000",
+                "inputs":[
+                    "Linear Feet",
+                    "Width (Inches)",
+                    "Base Weight (pounds/ream)"
+                ]
+            }
+        ],
+        "category":"diameter"
     }
+    
     
 ]

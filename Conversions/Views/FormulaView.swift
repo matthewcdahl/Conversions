@@ -37,7 +37,7 @@ struct FormulaView: View {
                                 .font(.subheadline)
                                 .padding(.bottom, -5)
                             HStack(alignment: .center, spacing: 15){
-                                if(i == 0){
+                                if(i == 0 && categoryFunctions[currentFunction].expressions.count > 1){
                                     Button(action: {
                                         selectedBox = i+1
                                     }) {

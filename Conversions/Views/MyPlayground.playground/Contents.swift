@@ -23,9 +23,9 @@ func solveEquation(eq: String, inputs: [Double]) -> Double{
 }
 
 
-var equation = "A * (3.280839895 * 3.280839895) / 1000"
+var equation = "sqrt(A)"
 var inputs = [Double]()
-inputs.append(1295)
+inputs.append(16)
 inputs.append(5)
 
 print(solveEquation(eq: equation, inputs: inputs))
