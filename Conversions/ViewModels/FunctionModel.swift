@@ -12,12 +12,32 @@ class FunctionModel: ObservableObject{
     @Published var functions = [Function]()
     var inputs = [Double?]()
     
+    @Published var favorites = [Favorite](){
+        didSet{
+            saveFavorites()
+        }
+    }
+    let favoritesKey: String = "favorites_list"
+    
     
     init(){
         self.functions = DataService.getLocalData()
         inputs.append(nil)
         inputs.append(nil)
         inputs.append(nil)
+        
+        //TODO: Get favorites from user defaults
+        
+        guard
+            let data = UserDefaults.standard.data(forKey: favoritesKey),
+            let favoriteItems = try? JSONDecoder().decode([Favorite].self, from: data)
+        else {
+            return
+        }
+        
+        self.favorites = favoriteItems
+        
+        
     }
     
     func intToString(_ integer: Int) -> String{
@@ -119,6 +139,46 @@ class FunctionModel: ObservableObject{
         
         return String(round(value*10000) / 10000)
     }
+    
+    func addToFavorites(newFav: Favorite){
+        
+        favorites.append(newFav)
+        
+        
+    }
+    
+    func removeFromFavorites(toRemoveId: UUID){
+        for i in 0..<favorites.count{
+            if favorites[i].id == toRemoveId{
+                favorites.remove(at: i)
+            }
+        }
+        
+        
+    }
+    
+    func saveFavorites(){
+        //TODO: save favorites array to user defaults
+        
+        if let encodedData = try? JSONEncoder().encode(favorites){
+            
+            UserDefaults.standard.set(encodedData, forKey: favoritesKey)
+            
+        }
+    }
+    
+    func getValidInputs() -> [Double]{
+        var rtn = [Double]()
+        for i in inputs{
+            if(i != nil){
+                rtn.append(i!)
+            }
+        }
+        
+        return rtn
+    }
+    
+    
         
     
 }

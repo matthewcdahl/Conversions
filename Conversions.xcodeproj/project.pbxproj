@@ -12,6 +12,8 @@
 		606E24BC278BB52F0025B261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606E24BB278BB52F0025B261 /* Assets.xcassets */; };
 		606E24BF278BB52F0025B261 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606E24BE278BB52F0025B261 /* Preview Assets.xcassets */; };
 		606E24C9278BB61E0025B261 /* FormulaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606E24C8278BB61D0025B261 /* FormulaView.swift */; };
+		608ABF90278DCEAD005B546B /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608ABF8F278DCEAD005B546B /* Favorite.swift */; };
+		608ABF92278DD656005B546B /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608ABF91278DD656005B546B /* FavoritesView.swift */; };
 		60BA50C0278C85470068141F /* functions.json in Resources */ = {isa = PBXBuildFile; fileRef = 60BA50BF278C85470068141F /* functions.json */; };
 		60BA50C2278C89680068141F /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA50C1278C89670068141F /* Function.swift */; };
 		60BA50C4278C89C40068141F /* FunctionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA50C3278C89C40068141F /* FunctionModel.swift */; };
@@ -26,6 +28,8 @@
 		606E24BB278BB52F0025B261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		606E24BE278BB52F0025B261 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		606E24C8278BB61D0025B261 /* FormulaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaView.swift; sourceTree = "<group>"; };
+		608ABF8F278DCEAD005B546B /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		608ABF91278DD656005B546B /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		60BA50BF278C85470068141F /* functions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = functions.json; sourceTree = "<group>"; };
 		60BA50C1278C89670068141F /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		60BA50C3278C89C40068141F /* FunctionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionModel.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			children = (
 				60BA50C1278C89670068141F /* Function.swift */,
 				60BA50C8278C9EB40068141F /* Expression.swift */,
+				608ABF8F278DCEAD005B546B /* Favorite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 			children = (
 				606E24B9278BB52B0025B261 /* HomeView.swift */,
 				606E24C8278BB61D0025B261 /* FormulaView.swift */,
+				608ABF91278DD656005B546B /* FavoritesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,8 +207,10 @@
 				606E24B8278BB52B0025B261 /* ConversionsApp.swift in Sources */,
 				60BA50C7278C8B210068141F /* DataService.swift in Sources */,
 				60BA50C2278C89680068141F /* Function.swift in Sources */,
+				608ABF90278DCEAD005B546B /* Favorite.swift in Sources */,
 				60BA50C9278C9EB40068141F /* Expression.swift in Sources */,
 				60BA50C4278C89C40068141F /* FunctionModel.swift in Sources */,
+				608ABF92278DD656005B546B /* FavoritesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

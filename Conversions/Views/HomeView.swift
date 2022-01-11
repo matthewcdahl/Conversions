@@ -33,6 +33,13 @@ struct HomeView: View {
                     Text("Go to roll diameter view")
                 })
                     .padding()
+                
+                NavigationLink(destination: {
+                    FavoritesView()
+                }, label: {
+                    Text("Go to favorites view")
+                })
+                    .padding()
             }
         }
     }

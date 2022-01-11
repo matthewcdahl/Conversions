@@ -101,7 +101,12 @@ struct FormulaView: View {
         .navigationTitle(category.first!.uppercased() + category.dropFirst())
         .navigationBarItems(trailing:
                         Button(action: {
-                            print("Edit button pressed...")
+                            //SAVE FUNCTION TO model favorites
+                            let newFav = Favorite(id: UUID(), title: "Doggy", inputs: model.functions[currentFunction].expressions[currentExpression].inputs, inputValues: model.getValidInputs(), solution: solutionLabel, solutionValue: model.solveFunction(functionIndex: currentFunction, expressionIndex: currentExpression, availableFuncs: categoryFunctions))
+                            
+                            model.addToFavorites(newFav: newFav)
+            
+            
                         }) {
                             Image(systemName: "plus.circle")
                         }
