@@ -28,6 +28,7 @@ struct FormulaView: View {
     @State var keyboardOpen: Bool = false
     
     
+    
     var body: some View {
         VStack {
             ScrollView{
@@ -102,12 +103,9 @@ struct FormulaView: View {
         .navigationTitle(category.first!.uppercased() + category.dropFirst())
         .navigationBarItems(trailing:
                         Button(action: {
-                            //SAVE FUNCTION TO model favorites
-            let newFav = Favorite(id: UUID(), title: "Doggy", inputs: categoryFunctions[currentFunction].expressions[currentExpression].inputs, inputValues: model.getValidInputs(), solution: solutionLabel, solutionValue: model.solveFunction(functionIndex: currentFunction, expressionIndex: currentExpression, availableFuncs: categoryFunctions), category: category, functionIndex: currentFunction, expressionIndex: currentExpression, wheelIndex: currentFunction)
-                            
-                            model.addToFavorites(newFav: newFav)
-            
-            
+                            alertView()
+                            //SAVE FUNCTION TO model favorite
+
                         }) {
                             Image(systemName: "plus.circle")
                         }
@@ -157,6 +155,32 @@ struct FormulaView: View {
             
         }
         
+    }
+    
+    func alertView(){
+        let alert = UIAlertController(title: "Add Favorite", message: "What would you like the name for this favorite to be?", preferredStyle: .alert)
+        
+        alert.addTextField{ title in
+            title.placeholder = "Name"
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive){(_) in
+            
+        }
+        let addAction = UIAlertAction(title: "Add", style: .default){ (_) in
+            let addFavName = alert.textFields![0].text!
+            
+            let newFav = Favorite(id: UUID(), title: addFavName, inputs: categoryFunctions[currentFunction].expressions[currentExpression].inputs, inputValues: model.getValidInputs(), solution: solutionLabel, solutionValue: model.solveFunction(functionIndex: currentFunction, expressionIndex: currentExpression, availableFuncs: categoryFunctions), category: category, functionIndex: currentFunction, expressionIndex: currentExpression, wheelIndex: currentFunction)
+                            
+            model.addToFavorites(newFav: newFav)
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(addAction)
+        
+        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion:{
+            print("done with action")
+        })
     }
 }
 

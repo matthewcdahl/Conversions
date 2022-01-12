@@ -190,6 +190,25 @@ class FunctionModel: ObservableObject{
         
     }
     
+    func getFavoritesForCategory(category: String) -> [Favorite]{
+        
+        var rtn = [Favorite]()
+        
+        for f in favorites{
+            if(f.category == category){
+                rtn.append(f)
+            }
+        }
+        return rtn
+    }
+    
+    func updateFavoritesAfterDelete(diameter: [Favorite], pricing: [Favorite], metric: [Favorite], measure: [Favorite]) {
+        self.favorites.removeAll()
+        self.favorites += diameter
+        self.favorites += pricing
+        self.favorites += metric
+        self.favorites += measure
+    }
     
         
     
