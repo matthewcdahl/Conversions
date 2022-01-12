@@ -64,28 +64,6 @@ struct HomeView: View {
                     }
                 }
                 
-                
-                
-                /*NavigationLink(destination: {
-                    FormulaView(category: "pricing")
-                        .onAppear(perform: {
-                            model.resetInputs()
-                        })
-                }, label: {
-                    Text("Go to pricing view")
-                })
-                    .padding()
-                
-                NavigationLink(destination: {
-                    FormulaView(category: "diameter")
-                        .onAppear(perform: {
-                            model.resetInputs()
-                        })
-                }, label: {
-                    Text("Go to roll diameter view")
-                })
-                    .padding()*/
-                
             }
             .padding(.horizontal, 40)
             .padding(.bottom, 40)

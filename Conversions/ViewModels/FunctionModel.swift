@@ -135,7 +135,6 @@ class FunctionModel: ObservableObject{
         
         
         let expression = NSExpression(format:filledInEq)
-        print(expression)
         let value: Double = expression.expressionValue(with: nil, context: nil) as! Double
         
         return String(round(value*10000) / 10000)

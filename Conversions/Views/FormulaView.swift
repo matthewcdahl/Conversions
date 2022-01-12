@@ -134,7 +134,6 @@ struct FormulaView: View {
             }
             
             
-            print("new box \(selectedBox)")
         })
         .onChange(of: selectedWheelIndex, perform: {newSelection in
             if(selectedBox == 0){
@@ -179,7 +178,6 @@ struct FormulaView: View {
         alert.addAction(addAction)
         
         UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion:{
-            print("done with action")
         })
     }
 }
