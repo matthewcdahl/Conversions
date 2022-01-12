@@ -9,24 +9,32 @@ import SwiftUI
 
 struct LaunchTabView: View {
     
+    @EnvironmentObject var model: FunctionModel
     @State var selectedTab = 0
     
     var body: some View {
         TabView(selection: $selectedTab){
             HomeView()
                 .tabItem{
-                    Image(systemName: "3.circle.fill")
-                    Text("Conversion")
+                    VStack{
+                        Image(systemName: "3.circle.fill")
+                        Text("Conversion")
+                    }
                 }
                 .tag(0)
             
             FavoritesView()
                 .tabItem{
-                    Image(systemName: "star.fill")
-                    Text("Favorites")
+                    VStack{
+                        Image(systemName: "star.fill")
+                        Text("Favorites")
+                    }
                 }
                 .tag(1)
         }
+        .onChange(of: selectedTab, perform: {newValue in
+            print("Change tabs")
+        })
     }
 }
 

@@ -266,7 +266,378 @@
             }
         ],
         "category":"diameter"
+    },
+    {
+        "solution":"Millimeters",
+        "expressions":[
+            {
+                "expression":"A * 10",
+                "inputs":[
+                    "Centimeters"
+                ]
+            },
+            {
+                "expression":"A * 1000",
+                "inputs":[
+                    "Meters"
+                ]
+            },
+            {
+                "expression":"A * 25.4",
+                "inputs":[
+                    "Inches"
+                ]
+            },
+            {
+                "expression":"A * 304.8",
+                "inputs":[
+                    "Feet"
+                ]
+            },
+            {
+                "expression":"A / 1000",
+                "inputs":[
+                    "Micron"
+                ]
+            },
+            {
+                "expression":"A * 39.37",
+                "inputs":[
+                    "Mils"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Centimeters",
+        "expressions":[
+            {
+                "expression":"A / 10",
+                "inputs":[
+                    "Millimeters"
+                ]
+            },
+            {
+                "expression":"A * 100",
+                "inputs":[
+                    "Meters"
+                ]
+            },
+            {
+                "expression":"A * 2.54",
+                "inputs":[
+                    "Inches"
+                ]
+            },
+            {
+                "expression":"A * 30.48",
+                "inputs":[
+                    "Feet"
+                ]
+            },
+            {
+                "expression":"A / 10000",
+                "inputs":[
+                    "Micron"
+                ]
+            },
+            {
+                "expression":"A / 393.701",
+                "inputs":[
+                    "Mils"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Meters",
+        "expressions":[
+            {
+                "expression":"A / 1000",
+                "inputs":[
+                    "Millimeters"
+                ]
+            },
+            {
+                "expression":"A / 100",
+                "inputs":[
+                    "Centimeters"
+                ]
+            },
+            {
+                "expression":"A / 39.3701",
+                "inputs":[
+                    "Inches"
+                ]
+            },
+            {
+                "expression":"A / 3.28084",
+                "inputs":[
+                    "Feet"
+                ]
+            },
+            {
+                "expression":"A / 1000000",
+                "inputs":[
+                    "Micron"
+                ]
+            },
+            {
+                "expression":"A / 39370.1",
+                "inputs":[
+                    "Mils"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Inches",
+        "expressions":[
+            {
+                "expression":"A / 25.4",
+                "inputs":[
+                    "Millimeters"
+                ]
+            },
+            {
+                "expression":"A / 2.54",
+                "inputs":[
+                    "Centimeters"
+                ]
+            },
+            {
+                "expression":"A * 39.3701",
+                "inputs":[
+                    "Meters"
+                ]
+            },
+            {
+                "expression":"A * 12",
+                "inputs":[
+                    "Feet"
+                ]
+            },
+            {
+                "expression":"A / 25400",
+                "inputs":[
+                    "Micron"
+                ]
+            },
+            {
+                "expression":"A / 1000",
+                "inputs":[
+                    "Mils"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Feet",
+        "expressions":[
+            {
+                "expression":"A / 304.8",
+                "inputs":[
+                    "Millimeters"
+                ]
+            },
+            {
+                "expression":"A / 30.48",
+                "inputs":[
+                    "Centimeters"
+                ]
+            },
+            {
+                "expression":"A / 12",
+                "inputs":[
+                    "Inches"
+                ]
+            },
+            {
+                "expression":"A * 3.28084",
+                "inputs":[
+                    "Meters"
+                ]
+            },
+            {
+                "expression":"A / 304800",
+                "inputs":[
+                    "Micron"
+                ]
+            },
+            {
+                "expression":"A / 12000",
+                "inputs":[
+                    "Mils"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Microns",
+        "expressions":[
+            {
+                "expression":"A * 25.4",
+                "inputs":[
+                    "Mils"
+                ]
+            },
+            {
+                "expression":"A * 1000",
+                "inputs":[
+                    "Millimeters"
+                ]
+            },
+            {
+                "expression":"A * 10000",
+                "inputs":[
+                    "Centimeters"
+                ]
+            },
+            {
+                "expression":"A * 25400",
+                "inputs":[
+                    "Inches"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Mils",
+        "expressions":[
+            {
+                "expression":"A / 25.4",
+                "inputs":[
+                    "Microns"
+                ]
+            },
+            {
+                "expression":"A * 39.3701",
+                "inputs":[
+                    "Millimeters"
+                ]
+            },
+            {
+                "expression":"A * 393.701",
+                "inputs":[
+                    "Centimeters"
+                ]
+            },
+            {
+                "expression":"A * 1000",
+                "inputs":[
+                    "Inches"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Pounds",
+        "expressions":[
+            {
+                "expression":"A / 453.592",
+                "inputs":[
+                    "Grams"
+                ]
+            },
+            {
+                "expression":"A / 16",
+                "inputs":[
+                    "Ounces"
+                ]
+            },
+            {
+                "expression":"A * 2.20462",
+                "inputs":[
+                    "Kilograms"
+                ]
+            },
+            {
+                "expression":"A * 2204.62",
+                "inputs":[
+                    "Metric Tonnes"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Grams",
+        "expressions":[
+            {
+                "expression":"A * 28.3495",
+                "inputs":[
+                    "Ounces"
+                ]
+            },
+            {
+                "expression":"A * 453.592",
+                "inputs":[
+                    "Pounds"
+                ]
+            },
+            {
+                "expression":"A * 1000",
+                "inputs":[
+                    "Kilograms"
+                ]
+            },
+            {
+                "expression":"A * 1000000",
+                "inputs":[
+                    "Metric Tonnes"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Grams",
+        "expressions":[
+            {
+                "expression":"A * 28.3495",
+                "inputs":[
+                    "Ounces"
+                ]
+            },
+            {
+                "expression":"A * 453.592",
+                "inputs":[
+                    "Pounds"
+                ]
+            },
+            {
+                "expression":"A * 1000",
+                "inputs":[
+                    "Kilograms"
+                ]
+            },
+            {
+                "expression":"A * 1000000",
+                "inputs":[
+                    "Metric Tonnes"
+                ]
+            }
+            
+        ],
+        "category":"measure"
     }
+    
     
     
 ]
