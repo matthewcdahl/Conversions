@@ -228,7 +228,7 @@
         "category":"diameter"
     },
     {
-        "solution":"Roll Diameter (inches) (3in. Core)",
+        "solution":"Roll Diameter (in) (3in Core)",
         "expressions":[
             {
                 "expression":"sqrt((A/(65.4536/B))+9)",
@@ -241,7 +241,7 @@
         "category":"diameter"
     },
     {
-        "solution":"Roll Diameter (inches) (6in. Core)",
+        "solution":"Roll Diameter (in) (6in Core)",
         "expressions":[
             {
                 "expression":"sqrt((A/(65.4536/B))+36)",
@@ -570,6 +570,13 @@
                 "inputs":[
                     "Metric Tonnes"
                 ]
+            },
+            {
+                "expression":"A * (B / 3000) * (3.280839895 * 3.280839895)",
+                "inputs":[
+                    "Square Meters",
+                    "Pounds/Ream"
+                ]
             }
             
         ],
@@ -607,16 +614,53 @@
         "category":"metric"
     },
     {
-        "solution":"Grams",
+        "solution":"Ounces",
         "expressions":[
             {
-                "expression":"A * 28.3495",
+                "expression":"A / 28.3495",
+                "inputs":[
+                    "Grams"
+                ]
+            },
+            {
+                "expression":"A * 16",
+                "inputs":[
+                    "Pounds"
+                ]
+            },
+            {
+                "expression":"A * 35.274",
+                "inputs":[
+                    "Kilograms"
+                ]
+            },
+            {
+                "expression":"A * 35274",
+                "inputs":[
+                    "Metric Tonnes"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Kilograms",
+        "expressions":[
+            {
+                "expression":"A / 1000",
+                "inputs":[
+                    "Grams"
+                ]
+            },
+            {
+                "expression":"A / 35.274",
                 "inputs":[
                     "Ounces"
                 ]
             },
             {
-                "expression":"A * 453.592",
+                "expression":"A / 2.20462",
                 "inputs":[
                     "Pounds"
                 ]
@@ -624,20 +668,380 @@
             {
                 "expression":"A * 1000",
                 "inputs":[
-                    "Kilograms"
+                    "Metric Tonnes"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Metric Tons",
+        "expressions":[
+            {
+                "expression":"A / 1000000",
+                "inputs":[
+                    "Grams"
                 ]
             },
             {
-                "expression":"A * 1000000",
+                "expression":"A / 35274",
                 "inputs":[
-                    "Metric Tonnes"
+                    "Ounces"
+                ]
+            },
+            {
+                "expression":"A / 2204.62",
+                "inputs":[
+                    "Pounds"
+                ]
+            },
+            {
+                "expression":"A / 1000",
+                "inputs":[
+                    "Kilograms"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"MSF",
+        "expressions":[
+            {
+                "expression":"A * (1/B) * 3",
+                "inputs":[
+                    "Pounds",
+                    "Pounds/Ream"
+                ]
+            },
+            {
+                "expression":"A /( 1000 / (3.280839895 * 3.280839895))",
+                "inputs":[
+                    "Square Meters"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Square Meters",
+        "expressions":[
+            {
+                "expression":"A * (1/B) * 3000 * (1/3.280839895) * (1/3.280839895)",
+                "inputs":[
+                    "Pounds",
+                    "Pounds/Ream"
+                ]
+            },
+            {
+                "expression":"A * 1000 / (3.280839895 * 3.280839895)",
+                "inputs":[
+                    "MSF"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Grams/Square Meter",
+        "expressions":[
+            {
+                "expression":"A * 4882.42762 / 3000",
+                "inputs":[
+                    "Pounds/Ream"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Pounds/Ream",
+        "expressions":[
+            {
+                "expression":"A / (4882.42762 / 3000)",
+                "inputs":[
+                    "Grams/Square Meter"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Square Centimeters",
+        "expressions":[
+            {
+                "expression":"A * (2.54 * 2.54)",
+                "inputs":[
+                    "Square Inches"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"Square Inches",
+        "expressions":[
+            {
+                "expression":"A / (2.54 * 2.54)",
+                "inputs":[
+                    "Square Centimeters"
+                ]
+            }
+            
+        ],
+        "category":"metric"
+    },
+    {
+        "solution":"MSF",
+        "expressions":[
+            {
+                "expression":"A / 144",
+                "inputs":[
+                    "MSI"
+                ]
+            },
+            {
+                "expression":"A * B / 12000",
+                "inputs":[
+                    "Linear Feet",
+                    "Width (Inches)"
+                ]
+            },
+            {
+                "expression":"A * B * 3 / 12000",
+                "inputs":[
+                    "Linear Yards",
+                    "Width (Inches)"
+                ]
+            },
+            {
+                "expression":"A * 9 / 1000",
+                "inputs":[
+                    "Square Yards"
+                ]
+            },
+            {
+                "expression":"A * 3000 / (B*1000)",
+                "inputs":[
+                    "Pounds",
+                    "Pounds/Ream"
+                ]
+            },
+            {
+                "expression":"A * 6613.86786 / (B*1000)",
+                "inputs":[
+                    "Kilograms",
+                    "Pounds/Ream"
+                ]
+            }
+            
+        ],
+        "category":"measure"
+    },
+    {
+        "solution":"MSI",
+        "expressions":[
+            {
+                "expression":"A * 144",
+                "inputs":[
+                    "MSF"
+                ]
+            },
+            {
+                "expression":"A * 432000 / (B*1000)",
+                "inputs":[
+                    "Pounds",
+                    "Pounds/Ream"
+                ]
+            }
+            
+        ],
+        "category":"measure"
+    },
+    {
+        "solution":"Pounds",
+        "expressions":[
+            {
+                "expression":"A * B * C / 36000",
+                "inputs":[
+                    "Linear Feet",
+                    "Width (Inches)",
+                    "Pounds/Ream"
+                    
+                ]
+            },
+            {
+                "expression":"A * B / 3000",
+                "inputs":[
+                    "Square Feet",
+                    "Pounds/Ream"
+                ]
+            },
+            {
+                "expression":"A * B / 3",
+                "inputs":[
+                    "MSF",
+                    "Pounds/Ream"
+                ]
+            },
+            {
+                "expression":"A * B / 432000",
+                "inputs":[
+                    "Square Inches",
+                    "Pounds/Ream"
+                ]
+            },
+            {
+                "expression":"A * B * 1000 / 432000",
+                "inputs":[
+                    "MSI",
+                    "Pounds/Ream"
+                ]
+            },
+            {
+                "expression":"A * B * 9 / 3000",
+                "inputs":[
+                    "Square Yards",
+                    "Pounds/Ream"
+                ]
+            }
+            
+        ],
+        "category":"measure"
+    },
+    {
+        "solution":"Kilograms",
+        "expressions":[
+            {
+                "expression":"(A * B / 3000) / 2.204622622",
+                "inputs":[
+                    "Square Feet",
+                    "Pounds/Ream"
+                ]
+            },
+            {
+                "expression":"(A * B / 3) / 2.204622622",
+                "inputs":[
+                    "MSF",
+                    "Pounds/Ream"
+                ]
+            },
+            {
+                "expression":"(A * B / 432000) / 2.204622622",
+                "inputs":[
+                    "Square Inches",
+                    "Pounds/Ream"
+                ]
+            },
+            {
+                "expression":"(A * B * 1000 / 432000) / 2.204622622",
+                "inputs":[
+                    "MSI",
+                    "Pounds/Ream"
+                ]
+            },
+            {
+                "expression":"(A * B * 9 / 3000) / 2.204622622",
+                "inputs":[
+                    "Square Yards",
+                    "Pounds/Ream"
+                ]
+            }
+            
+        ],
+        "category":"measure"
+    },
+    {
+        "solution":"Square Feet",
+        "expressions":[
+            {
+                "expression":"(A * 3000 / B)",
+                "inputs":[
+                    "Pounds",
+                    "Pounds/Ream"
+                ]
+            }
+            
+        ],
+        "category":"measure"
+    },
+    {
+        "solution":"Square Inches",
+        "expressions":[
+            {
+                "expression":"(A * 432000 / B)",
+                "inputs":[
+                    "Pounds",
+                    "Pounds/Ream"
+                ]
+            }
+            
+        ],
+        "category":"measure"
+    },
+    {
+        "solution":"Square Yards",
+        "expressions":[
+            {
+                "expression":"(A * 3000) / (B*9)",
+                "inputs":[
+                    "Pounds",
+                    "Pounds/Ream"
+                ]
+            },
+            {
+                "expression":"A * 1000 / 9",
+                "inputs":[
+                    "MSF"
+                ]
+            }
+            
+        ],
+        "category":"measure"
+    },
+    {
+        "solution":"Linear Feet",
+        "expressions":[
+            {
+                "expression":"A * 12000 / B",
+                "inputs":[
+                    "MSF",
+                    "Width (Inches)"
+                ]
+            },
+            {
+                "expression":"A * 36000 / (B*C)",
+                "inputs":[
+                    "Pounds",
+                    "Width (Inches)",
+                    "Pounds/Ream"
+                ]
+            }
+            
+        ],
+        "category":"measure"
+    },
+    {
+        "solution":"Linear Yards",
+        "expressions":[
+            {
+                "expression":"A * 12000 / (B*3)",
+                "inputs":[
+                    "MSF",
+                    "Width (Inches)"
                 ]
             }
             
         ],
         "category":"measure"
     }
-    
-    
+
     
 ]

@@ -82,7 +82,7 @@ struct HomeCardView: View{
                     .resizable()
                     .scaledToFit()
                     .padding()
-                    .aspectRatio(0.50, contentMode: .fit)
+                    .frame(width: 90, height: 90, alignment: .center)
                 Spacer()
                 Text(labelTop)
                     .font(.headline)
