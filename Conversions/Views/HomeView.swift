@@ -14,49 +14,53 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView{
-            VStack(alignment: .leading){
-                
-                Text("Home")
-                    .font(.largeTitle)
-                Text("Create Custom Conversions")
-                    .font(.title2)
-                    .padding(.bottom, 70)
-                
-                
-                
-                VStack(spacing: 40){
-                
-                    HStack(spacing: 40){
-                        NavigationLink(destination: FormulaView(category: "metric", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0),
-                        label: {
-                            HomeCardView(image: "metric-black", labelTop: "METRIC", labelBottom: "")
-                        })
+            ScrollView{
+                VStack(alignment: .leading){
+                    
+                    //Text("Home")
+                        //.font(.largeTitle)
+                    Text("Create Custom Conversions")
+                        .font(.title2)
+                        .padding(.bottom, 70)
+                        .padding(.horizontal)
+                    
+                    
+                    
+                        VStack(spacing: 40){
                         
-                        NavigationLink (destination: FormulaView(category: "pricing", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0),
-                        label: {
-                                HomeCardView(image: "pricing-black", labelTop: "PRICING", labelBottom: "")
-                        })
-                        
-                        
+                            HStack(spacing: 40){
+                                NavigationLink(destination: FormulaView(category: "metric", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0),
+                                label: {
+                                    HomeCardView(image: "metric-black", labelTop: "METRIC", labelBottom: "")
+                                })
+                                
+                                NavigationLink (destination: FormulaView(category: "pricing", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0),
+                                label: {
+                                        HomeCardView(image: "pricing-black", labelTop: "PRICING", labelBottom: "")
+                                })
+                                
+                                
+                                
+                            }
+                            HStack(spacing: 40){
+                                NavigationLink(destination: FormulaView(category: "diameter", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0),
+                                label: {
+                                    HomeCardView(image: "roll-black", labelTop: "ROLL", labelBottom: "DIAMETER")
+                                })
+                               
+                                NavigationLink(destination: FormulaView(category: "measure", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0),
+                                label: {
+                                    HomeCardView(image: "measure-black", labelTop: "UNITS OF", labelBottom: "MEASURE")
+                                })
+                                
+                            }
                         
                     }
-                    HStack(spacing: 40){
-                        NavigationLink(destination: FormulaView(category: "diameter", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0),
-                        label: {
-                            HomeCardView(image: "roll-black", labelTop: "ROLL", labelBottom: "DIAMETER")
-                        })
-                       
-                        NavigationLink(destination: FormulaView(category: "measure", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0),
-                        label: {
-                            HomeCardView(image: "measure-black", labelTop: "UNITS OF", labelBottom: "MEASURE")
-                        })
-                        
-                    }
+                        .padding(.horizontal, 40)
                 }
-                
+                .padding(.bottom, 40)
+                .navigationTitle("Home")
             }
-            .padding(.horizontal, 40)
-            .padding(.bottom, 40)
         }
     }
 }

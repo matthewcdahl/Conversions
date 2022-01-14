@@ -26,6 +26,7 @@ struct FormulaView: View {
     @State var inputLabels: [String] = [String]()
     
     @State var keyboardOpen: Bool = false
+    @State var wheelOpen: Bool = true
     
     
     
@@ -42,6 +43,8 @@ struct FormulaView: View {
                                 if(i == 0 && categoryFunctions[currentFunction].expressions.count > 1){
                                     Button(action: {
                                         selectedBox = i+1
+                                        wheelOpen = true
+                                        closeKeyboard()
                                     }) {
                                         InputCardView(alpha: 0.12, height: 41, selected: selectedBox == i+1, label: categoryFunctions[currentFunction].expressions[currentExpression].inputs[i], showArrow: true)
                                             .foregroundColor(.black)
@@ -69,6 +72,8 @@ struct FormulaView: View {
                     HStack(alignment: .center, spacing: 15){
                         Button(action: {
                             selectedBox = 0
+                            wheelOpen = true
+                            closeKeyboard()
                         }) {
                             InputCardView(alpha: 0.42, height: 47, selected: selectedBox == 0, label: solutionLabel, showArrow: true)
                                 .foregroundColor(.black)
@@ -86,7 +91,7 @@ struct FormulaView: View {
                 .padding(.top, 15)
             }
             
-            if(!keyboardOpen){
+            if(!keyboardOpen && wheelOpen){
                 VStack(alignment: .leading){
                     //MARK: Wheel
                     Picker("wheel", selection: $selectedWheelIndex, content: {
@@ -123,6 +128,8 @@ struct FormulaView: View {
             
         }
         .onChange(of: selectedBox, perform: {newBox in
+            keyboardOpen = false
+            wheelOpen = true
             if(newBox == 0){
                 wheelOptions = model.getSolutionsFromFunctions(arr: categoryFunctions)
                 selectedWheelIndex = currentFunction
@@ -151,6 +158,7 @@ struct FormulaView: View {
         .onTapGesture {
                 UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
                 keyboardOpen = false
+                wheelOpen = false
             
         }
         
@@ -172,6 +180,11 @@ struct FormulaView: View {
             let newFav = Favorite(id: UUID(), title: addFavName, inputs: categoryFunctions[currentFunction].expressions[currentExpression].inputs, inputValues: model.getValidInputs(), solution: solutionLabel, solutionValue: model.solveFunction(functionIndex: currentFunction, expressionIndex: currentExpression, availableFuncs: categoryFunctions), category: category, functionIndex: currentFunction, expressionIndex: currentExpression, wheelIndex: currentFunction)
                             
             model.addToFavorites(newFav: newFav)
+            
+            keyboardOpen = false
+            wheelOpen = false
+            closeKeyboard()
+            
         }
         
         alert.addAction(cancelAction)
@@ -179,6 +192,11 @@ struct FormulaView: View {
         
         UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion:{
         })
+    }
+    
+    func closeKeyboard(){
+        let resign = #selector(UIResponder.resignFirstResponder)
+        UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
     }
 }
 
@@ -189,6 +207,8 @@ struct InputCardView: View{
     var selected: Bool
     var label: String
     var showArrow: Bool
+    
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View{
         ZStack{
@@ -208,7 +228,13 @@ struct InputCardView: View{
             }
             
             HStack{
-                Text(label)
+                if(colorScheme == .dark){
+                    Text(label)
+                        .foregroundColor(.white)
+                }
+                else{
+                    Text(label)
+                }
                 Spacer()
                 if(showArrow){
                     Image(systemName: "chevron.up.chevron.down")
@@ -279,6 +305,7 @@ struct SolutionCardView: View{
                 }
                 Spacer()
                 Text(text)
+                    .textSelection(.enabled)
             }
             .padding()
         }
