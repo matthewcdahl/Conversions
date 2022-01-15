@@ -170,7 +170,7 @@ struct FormulaView: View {
             
             //MARK: ADDED FAVORITES CARD
             if(animationAmount > 0){
-                SuccessCardView(sysImage: "checkmark", text: "Added to Favorites")
+                SuccessCardView(sysImage: "checkmark", text: "Added")
                     .onAppear(){
                         
                         let holdTime = 0.8

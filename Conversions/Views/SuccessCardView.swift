@@ -15,9 +15,10 @@ struct SuccessCardView: View {
     
     var body: some View {
         ZStack{
+            
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(Color(.sRGB, red: 0.9, green: 0.9, blue: 0.9, opacity: 0.9))
-                .frame(width: 180, height: 160, alignment: .center)
+                .foregroundColor(Color(.sRGB, red: 0.95, green: 0.95, blue: 0.95, opacity: 1))
+                .frame(width: 150, height: 150, alignment: .center)
             
             
             HStack{
@@ -26,6 +27,7 @@ struct SuccessCardView: View {
                         .resizable()
                         .frame(width: 50, height: 50, alignment: .center)
                         .foregroundColor(.green)
+                        .padding(.top)
                     Text(text)
                         .padding()
                 }
@@ -42,6 +44,6 @@ struct SuccessCardView: View {
 
 struct SuccessCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SuccessCardView(sysImage: "checkmark", text: "Added to Favorites")
+        SuccessCardView(sysImage: "checkmark", text: "Added")
     }
 }
