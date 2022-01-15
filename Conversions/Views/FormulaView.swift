@@ -168,11 +168,12 @@ struct FormulaView: View {
                 
             }
             
+            //MARK: ADDED FAVORITES CARD
             if(animationAmount > 0){
                 SuccessCardView(sysImage: "checkmark", text: "Added to Favorites")
                     .onAppear(){
                         
-                        let holdTime = 0.5
+                        let holdTime = 0.8
                         let fadeTime = 0.5
                         
                         DispatchQueue.main.asyncAfter(deadline: .now() + holdTime) {
