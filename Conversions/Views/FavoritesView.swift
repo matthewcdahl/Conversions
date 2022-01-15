@@ -41,6 +41,10 @@ struct FavoritesView: View {
                                 pricingFavorites.remove(atOffsets: indexSet)
                                 model.updateFavoritesAfterDelete(diameter: diameterFavorites, pricing: pricingFavorites, metric: metricFavorites, measure: measureFavorites)
                             })
+                            .onMove { (indexSet, index) in
+                                pricingFavorites.move(fromOffsets: indexSet, toOffset: index)
+                                model.updateFavoritesAfterDelete(diameter: diameterFavorites, pricing: pricingFavorites, metric: metricFavorites, measure: measureFavorites)
+                            }
                         }
                     }
                     
@@ -62,6 +66,10 @@ struct FavoritesView: View {
                                 metricFavorites.remove(atOffsets: indexSet)
                                 model.updateFavoritesAfterDelete(diameter: diameterFavorites, pricing: pricingFavorites, metric: metricFavorites, measure: measureFavorites)
                             })
+                            .onMove { (indexSet, index) in
+                                metricFavorites.move(fromOffsets: indexSet, toOffset: index)
+                                model.updateFavoritesAfterDelete(diameter: diameterFavorites, pricing: pricingFavorites, metric: metricFavorites, measure: measureFavorites)
+                            }
                         }
                     }
                     
@@ -83,6 +91,10 @@ struct FavoritesView: View {
                                 diameterFavorites.remove(atOffsets: indexSet)
                                 model.updateFavoritesAfterDelete(diameter: diameterFavorites, pricing: pricingFavorites, metric: metricFavorites, measure: measureFavorites)
                             })
+                            .onMove { (indexSet, index) in
+                                diameterFavorites.move(fromOffsets: indexSet, toOffset: index)
+                                model.updateFavoritesAfterDelete(diameter: diameterFavorites, pricing: pricingFavorites, metric: metricFavorites, measure: measureFavorites)
+                            }
                         }
                     }
                     
@@ -104,6 +116,10 @@ struct FavoritesView: View {
                                 measureFavorites.remove(atOffsets: indexSet)
                                 model.updateFavoritesAfterDelete(diameter: diameterFavorites, pricing: pricingFavorites, metric: metricFavorites, measure: measureFavorites)
                             })
+                            .onMove { (indexSet, index) in
+                                measureFavorites.move(fromOffsets: indexSet, toOffset: index)
+                                model.updateFavoritesAfterDelete(diameter: diameterFavorites, pricing: pricingFavorites, metric: metricFavorites, measure: measureFavorites)
+                            }
                         }
                     }
                     
@@ -127,6 +143,7 @@ struct FavoritesView: View {
             }
         }
     }
+
 }
 
 

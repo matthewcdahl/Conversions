@@ -142,8 +142,7 @@ class FunctionModel: ObservableObject{
     
     func addToFavorites(newFav: Favorite){
         
-        favorites.append(newFav)
-        
+        favorites.insert(newFav, at: 0)
         
     }
     

@@ -20,6 +20,7 @@
 		60BA50C4278C89C40068141F /* FunctionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA50C3278C89C40068141F /* FunctionModel.swift */; };
 		60BA50C7278C8B210068141F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA50C6278C8B210068141F /* DataService.swift */; };
 		60BA50C9278C9EB40068141F /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BA50C8278C9EB40068141F /* Expression.swift */; };
+		60DEDF6927932A6B00591B22 /* SuccessCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DEDF6827932A6B00591B22 /* SuccessCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		60BA50C3278C89C40068141F /* FunctionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionModel.swift; sourceTree = "<group>"; };
 		60BA50C6278C8B210068141F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		60BA50C8278C9EB40068141F /* Expression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expression.swift; sourceTree = "<group>"; };
+		60DEDF6827932A6B00591B22 /* SuccessCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				606E24C8278BB61D0025B261 /* FormulaView.swift */,
 				608ABF91278DD656005B546B /* FavoritesView.swift */,
 				608ABF93278DF710005B546B /* LaunchTabView.swift */,
+				60DEDF6827932A6B00591B22 /* SuccessCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				606E24BA278BB52B0025B261 /* HomeView.swift in Sources */,
+				60DEDF6927932A6B00591B22 /* SuccessCardView.swift in Sources */,
 				606E24C9278BB61E0025B261 /* FormulaView.swift in Sources */,
 				606E24B8278BB52B0025B261 /* ConversionsApp.swift in Sources */,
 				60BA50C7278C8B210068141F /* DataService.swift in Sources */,
