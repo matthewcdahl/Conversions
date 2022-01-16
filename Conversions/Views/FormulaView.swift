@@ -31,6 +31,8 @@ struct FormulaView: View {
     @State private var animationAmount = 0.0
     @State private var fadeAmount = 1.0
     
+    let fromFavorites: Bool
+    
     
     
     var body: some View {
@@ -125,7 +127,7 @@ struct FormulaView: View {
                 wheelOptions = model.getSolutionsFromFunctions(arr: categoryFunctions)
                 solutionLabel = categoryFunctions[currentFunction].solution
                 
-                if(category != model.lastCategory){
+                if(category != model.lastCategory && !fromFavorites){
                     model.resetInputs()
                 }
                 
@@ -350,7 +352,7 @@ struct SolutionCardView: View{
 struct FormulaView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            FormulaView(category: "pricing", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0)
+            FormulaView(category: "pricing", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0, fromFavorites: false)
                 .environmentObject(FunctionModel())
         }
     }

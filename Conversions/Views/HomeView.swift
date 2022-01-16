@@ -29,12 +29,12 @@ struct HomeView: View {
                         VStack(spacing: 40){
                         
                             HStack(spacing: 40){
-                                NavigationLink(destination: FormulaView(category: "metric", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0),
+                                NavigationLink(destination: FormulaView(category: "metric", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0, fromFavorites: false),
                                 label: {
                                     HomeCardView(image: "metric-black", labelTop: "METRIC", labelBottom: "")
                                 })
                                 
-                                NavigationLink (destination: FormulaView(category: "pricing", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0),
+                                NavigationLink (destination: FormulaView(category: "pricing", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0, fromFavorites: false),
                                 label: {
                                         HomeCardView(image: "pricing-black", labelTop: "PRICING", labelBottom: "")
                                 })
@@ -43,12 +43,12 @@ struct HomeView: View {
                                 
                             }
                             HStack(spacing: 40){
-                                NavigationLink(destination: FormulaView(category: "diameter", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0),
+                                NavigationLink(destination: FormulaView(category: "diameter", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0, fromFavorites: false),
                                 label: {
                                     HomeCardView(image: "roll-black", labelTop: "ROLL", labelBottom: "DIAMETER")
                                 })
                                
-                                NavigationLink(destination: FormulaView(category: "measure", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0),
+                                NavigationLink(destination: FormulaView(category: "measure", currentFunction: 0, currentExpression: 0, selectedWheelIndex: 0, fromFavorites: false),
                                 label: {
                                     HomeCardView(image: "measure-black", labelTop: "UNITS OF", labelBottom: "MEASURE")
                                 })

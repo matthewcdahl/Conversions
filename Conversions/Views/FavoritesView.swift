@@ -28,7 +28,7 @@ struct FavoritesView: View {
                         Section(header: Text("Pricing")) {
                             ForEach(pricingFavorites){fav in
                                 NavigationLink(destination: {
-                                    FormulaView(category: fav.category, currentFunction: fav.functionIndex, currentExpression: fav.expressionIndex, selectedWheelIndex: fav.wheelIndex)
+                                    FormulaView(category: fav.category, currentFunction: fav.functionIndex, currentExpression: fav.expressionIndex, selectedWheelIndex: fav.wheelIndex, fromFavorites: true)
                                         .onAppear(perform: {
                                             model.setInputsFromFavorite(favInputs: fav.inputValues)
                                         })
@@ -53,7 +53,7 @@ struct FavoritesView: View {
                         Section(header: Text("Metric")) {
                             ForEach(metricFavorites){fav in
                                 NavigationLink(destination: {
-                                    FormulaView(category: fav.category, currentFunction: fav.functionIndex, currentExpression: fav.expressionIndex, selectedWheelIndex: fav.wheelIndex)
+                                    FormulaView(category: fav.category, currentFunction: fav.functionIndex, currentExpression: fav.expressionIndex, selectedWheelIndex: fav.wheelIndex, fromFavorites: true)
                                         .onAppear(perform: {
                                             model.setInputsFromFavorite(favInputs: fav.inputValues)
                                         })
@@ -78,7 +78,7 @@ struct FavoritesView: View {
                         Section(header: Text("Roll Diameter")) {
                             ForEach(diameterFavorites){fav in
                                 NavigationLink(destination: {
-                                    FormulaView(category: fav.category, currentFunction: fav.functionIndex, currentExpression: fav.expressionIndex, selectedWheelIndex: fav.wheelIndex)
+                                    FormulaView(category: fav.category, currentFunction: fav.functionIndex, currentExpression: fav.expressionIndex, selectedWheelIndex: fav.wheelIndex, fromFavorites: true)
                                         .onAppear(perform: {
                                             model.setInputsFromFavorite(favInputs: fav.inputValues)
                                         })
@@ -103,7 +103,7 @@ struct FavoritesView: View {
                         Section(header: Text("Units of Measure")) {
                             ForEach(measureFavorites){fav in
                                 NavigationLink(destination: {
-                                    FormulaView(category: fav.category, currentFunction: fav.functionIndex, currentExpression: fav.expressionIndex, selectedWheelIndex: fav.wheelIndex)
+                                    FormulaView(category: fav.category, currentFunction: fav.functionIndex, currentExpression: fav.expressionIndex, selectedWheelIndex: fav.wheelIndex, fromFavorites: true)
                                         .onAppear(perform: {
                                             model.setInputsFromFavorite(favInputs: fav.inputValues)
                                         })
