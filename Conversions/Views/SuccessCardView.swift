@@ -13,12 +13,20 @@ struct SuccessCardView: View {
     var text: String
     @State var opac = 1.0
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         ZStack{
-            
-            RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(Color(.sRGB, red: 0.95, green: 0.95, blue: 0.95, opacity: 1))
-                .frame(width: 150, height: 150, alignment: .center)
+            if(colorScheme == .dark){
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(Color(.sRGB, red: 0.35, green: 0.35, blue: 0.35, opacity: 1))
+                    .frame(width: 150, height: 150, alignment: .center)
+            }
+            else{
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(Color(.sRGB, red: 0.95, green: 0.95, blue: 0.95, opacity: 1))
+                    .frame(width: 150, height: 150, alignment: .center)
+            }
             
             
             HStack{
