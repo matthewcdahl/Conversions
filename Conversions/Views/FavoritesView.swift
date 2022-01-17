@@ -10,6 +10,7 @@ import SwiftUI
 struct FavoritesView: View {
     
     @EnvironmentObject var model: FunctionModel
+    @State var categories = [String]()
     
     var body: some View {
         //ListCardView(favorite: Favorite(id: UUID(), title: "Here is a formula", inputs: ["MSF", "$/MSI"], inputValues: [0.54, 34.4444], solution: "Linear Feet", solutionValue: "23.445"))
@@ -18,7 +19,38 @@ struct FavoritesView: View {
             if model.favorites.count > 0{
                 List(){
                     
-                    var pricingFavorites = model.getFavoritesForCategory(category: "pricing")
+                    ForEach(categories, id: \.self){c in
+                        
+                        var categoryFavorites = model.getFavoritesForCategory(category: c)
+                        
+                        if(categoryFavorites.count > 0){
+                            Section(header: Text(c.uppercased())){
+                                ForEach(categoryFavorites){fav in
+                                    NavigationLink(destination: {
+                                        FormulaView(category: fav.category, currentFunction: fav.functionIndex, currentExpression: fav.expressionIndex, selectedWheelIndex: fav.wheelIndex, fromFavorites: true)
+                                            .onAppear(perform: {
+                                                model.setInputsFromFavorite(favInputs: fav.inputValues)
+                                            })
+                                    }, label: {
+                                        ListCardView(favorite: Favorite(id: fav.id, title: fav.title, inputs: fav.inputs, inputValues: fav.inputValues, solution: fav.solution, solutionValue: fav.solutionValue, category: fav.category, functionIndex: fav.functionIndex, expressionIndex: fav.expressionIndex, wheelIndex: fav.wheelIndex))
+
+                                    })
+                                }
+                                .onDelete(perform: {indexSet in
+                                    let cat = categoryFavorites[0].category
+                                    categoryFavorites.remove(atOffsets: indexSet)
+                                    model.updateFavoritesAfterChange(catFavs: categoryFavorites, category: cat)
+                                })
+                                .onMove { (indexSet, index) in
+                                    let cat = categoryFavorites[0].category
+                                    categoryFavorites.move(fromOffsets: indexSet, toOffset: index)
+                                    model.updateFavoritesAfterChange(catFavs: categoryFavorites, category: cat)
+                                }
+                            }
+                        }
+                    }
+                    
+                    /*var pricingFavorites = model.getFavoritesForCategory(category: "pricing")
                     var metricFavorites = model.getFavoritesForCategory(category: "metric")
                     var diameterFavorites = model.getFavoritesForCategory(category: "diameter")
                     var measureFavorites = model.getFavoritesForCategory(category: "measure")
@@ -121,7 +153,7 @@ struct FavoritesView: View {
                                 model.updateFavoritesAfterDelete(diameter: diameterFavorites, pricing: pricingFavorites, metric: metricFavorites, measure: measureFavorites)
                             }
                         }
-                    }
+                    }*/
                     
                 }
                 .navigationTitle("Favorites")
@@ -142,6 +174,9 @@ struct FavoritesView: View {
                 .navigationTitle("Favorites")
             }
         }
+        .onAppear(perform: {
+            self.categories = model.getAllCategories()
+        })
     }
 
 }

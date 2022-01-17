@@ -51,6 +51,7 @@ struct FormulaView: View {
                                         Button(action: {
                                             selectedBox = i+1
                                             wheelOpen = true
+                                            updatedKeyboardUI(newBox: 0)
                                             closeKeyboard()
                                         }) {
                                             InputCardView(alpha: 0.12, height: 41, selected: selectedBox == i+1, label: categoryFunctions[currentFunction].expressions[currentExpression].inputs[i], showArrow: true)
@@ -80,6 +81,7 @@ struct FormulaView: View {
                             Button(action: {
                                 selectedBox = 0
                                 wheelOpen = true
+                                updatedKeyboardUI(newBox: 0)
                                 closeKeyboard()
                             }) {
                                 InputCardView(alpha: 0.42, height: 47, selected: selectedBox == 0, label: solutionLabel, showArrow: true)
@@ -87,6 +89,9 @@ struct FormulaView: View {
                             }
                             
                             SolutionCardView(category: category, alpha: 0.42, height: 47, text: model.solveFunction(functionIndex: currentFunction, expressionIndex: currentExpression, availableFuncs: categoryFunctions))
+                                .onTapGesture(perform: {
+                                    updatedKeyboardUI(newBox: 0)
+                                })
                         }
                         .padding(.bottom, 30)
 
@@ -135,17 +140,7 @@ struct FormulaView: View {
                 
             }
             .onChange(of: selectedBox, perform: {newBox in
-                keyboardOpen = false
-                wheelOpen = true
-                if(newBox == 0){
-                    wheelOptions = model.getSolutionsFromFunctions(arr: categoryFunctions)
-                    selectedWheelIndex = currentFunction
-                } else{
-                    //if user selects input box
-                    wheelOptions = model.getFirstInputsFromFunction(function: categoryFunctions[currentFunction])
-                    selectedWheelIndex = currentExpression
-                    
-                }
+                updatedKeyboardUI(newBox: newBox)
                 
                 
             })
@@ -193,6 +188,22 @@ struct FormulaView: View {
         
     }
     
+    func updatedKeyboardUI(newBox: Int){
+        keyboardOpen = false
+        wheelOpen = true
+        
+        
+        if(newBox == 0){
+            wheelOptions = model.getSolutionsFromFunctions(arr: categoryFunctions)
+            selectedWheelIndex = currentFunction
+        } else{
+            //if user selects input box
+            wheelOptions = model.getFirstInputsFromFunction(function: categoryFunctions[currentFunction])
+            selectedWheelIndex = currentExpression
+            
+        }
+    }
+    
     func alertView(){
         
         wheelOpen = false
@@ -218,11 +229,16 @@ struct FormulaView: View {
             keyboardOpen = false
             closeKeyboard()
             
+            let impactMed = UIImpactFeedbackGenerator(style: .soft)
+            impactMed.impactOccurred()
+            
             
         }
         
         alert.addAction(cancelAction)
         alert.addAction(addAction)
+        
+        
         
         UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion:{
         })

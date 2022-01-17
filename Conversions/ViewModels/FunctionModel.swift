@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
 class FunctionModel: ObservableObject{
     
     @Published var functions = [Function]()
     var inputs = [Double?]()
     @Published var lastCategory = ""
+
     
     @Published var favorites = [Favorite](){
         didSet{
@@ -137,7 +139,11 @@ class FunctionModel: ObservableObject{
         let expression = NSExpression(format:filledInEq)
         let value: Double = expression.expressionValue(with: nil, context: nil) as! Double
         
-        return String(round(value*10000) / 10000)
+        let solution = round(value*10000) / 10000
+        
+        
+        
+        return String(solution)
     }
     
     func addToFavorites(newFav: Favorite){
@@ -200,12 +206,39 @@ class FunctionModel: ObservableObject{
         return rtn
     }
     
-    func updateFavoritesAfterDelete(diameter: [Favorite], pricing: [Favorite], metric: [Favorite], measure: [Favorite]) {
+    func updateFavoritesAfterChange(catFavs: [Favorite], category: String) {
+        
+
+        let allExcept = getAllExceptCategory(c: category)
+        
         self.favorites.removeAll()
-        self.favorites += diameter
-        self.favorites += pricing
-        self.favorites += metric
-        self.favorites += measure
+        self.favorites += allExcept
+        self.favorites += catFavs
+    }
+    
+    func getAllExceptCategory(c: String) -> [Favorite]{
+        var rtn = [Favorite]()
+        for f in favorites{
+            if(f.category != c){
+                rtn.append(f)
+            }
+        }
+                
+                
+        return rtn
+    }
+    
+    
+    func getAllCategories() -> [String]{
+        var rtn = [String]()
+        
+        for f in functions{
+            if(rtn.firstIndex(of: f.category) == nil){
+                rtn.append(f.category)
+            }
+        }
+        
+        return rtn
     }
     
         

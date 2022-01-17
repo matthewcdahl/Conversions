@@ -17,8 +17,8 @@ struct LaunchTabView: View {
             HomeView()
                 .tabItem{
                     VStack{
-                        Image(systemName: "3.circle.fill")
-                        Text("Conversion")
+                        Image(systemName: "house.fill")
+                        Text("Home")
                     }
                 }
                 .tag(0)
