@@ -89,9 +89,7 @@ struct FormulaView: View {
                             }
                             
                             SolutionCardView(category: category, alpha: 0.42, height: 47, text: model.solveFunction(functionIndex: currentFunction, expressionIndex: currentExpression, availableFuncs: categoryFunctions))
-                                .onTapGesture(perform: {
-                                    updatedKeyboardUI(newBox: 0)
-                                })
+                            
                         }
                         .padding(.bottom, 30)
 
